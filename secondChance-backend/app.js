@@ -33,4 +33,9 @@ app.use((err, req, res, next) => {
     res.status(500).send('Internal Server Error');
 });
 
+const port = process.env.PORT || 3060;
+app.listen(port, () => {
+    logger.info(`Server running on port ${port}`);
+});
+
 module.exports = app;
